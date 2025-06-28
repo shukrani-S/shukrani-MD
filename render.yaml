@@ -1,16 +1,10 @@
 services:
   - type: web
-    name: SHUKRANI-MD
-    env: node # Change to "python" or your environment if not Node.js
+    name: shukrani-pairing
+    env: node
     plan: free
-    buildCommand: npm install 
-    startCommand: npm start   
+    buildCommand: npm install
+    startCommand: node index.js
     envVars:
-      - key: SESSION-ID
-        sync: false
-      - key: OWNER
-        sync: false
-      - key: OWNER-NUMBER
-        sync: false
-      - key: PREFIX
-        sync: false
+      - key: PORT
+        value: 10000
