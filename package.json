@@ -2,24 +2,24 @@
   "name": "babyboy",
   "version": "2.0.0",
   "description": "",
-  "main": "control.js",
+  "main": "shukrani.js",
   "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "s": "node control.js", 
-    "start": "node control.js", 
-    "ezra": "pm2 start control.js --attach --max-memory-restart 490M",
+    "s": "node shukrani.js", 
+    "start": "node shukrani.js", 
+    "ezra": "pm2 start shukrani.js --attach --max-memory-restart 490M",
     "c": "tsc"
   },
   "keywords": [
     "bot",
     "Baileys",
-    "Lucky-Xforce",
+    "Shukrani-MD",
     "whatsapp",
     "whatsapp-bot",
-    "frediezra"
+    "shukranie"
   ],
-  "author": "frediezra",
+  "author": "shukranie",
   "license": "ISC",
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",  
