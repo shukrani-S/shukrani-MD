@@ -1,9 +1,9 @@
-// FredieTech tz 🇹🇿 team
+// Shukrani tz 🇹🇿 team
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 8000;
 app.get("/", (req, res) => {
-  res.send("LUCKY MD XFORCE IS ALIVE ✅");
+  res.send("SHUKRANI IS ALIVE ✅");
   });
 // Add port listening
 app.listen(PORT, () => {
@@ -51,14 +51,14 @@ const FileType = require('file-type');
 const { Sticker, createSticker, StickerTypes } = require('wa-sticker-formatter');
 //import chalk from 'chalk'
 const { verifierEtatJid , recupererActionJid } = require("./luckydatabase/antilien");
-const { atbverifierEtatJid , atbrecupererActionJid } = require("./luckydatabase/antibot");
-let evt = require(__dirname + "/fredi/ezra");
-const {isUserBanned , addUserToBanList , removeUserFromBanList} = require("./luckydatabase/banUser");
-const  {addGroupToBanList,isGroupBanned,removeGroupFromBanList} = require("./luckydatabase/banGroup");
-const {isGroupOnlyAdmin,addGroupToOnlyAdminList,removeGroupFromOnlyAdminList} = require("./luckydatabase/onlyAdmin");
+const { atbverifierEtatJid , atbrecupererActionJid } = require("./shukranidatabase/antibot");
+let evt = require(__dirname + "/shukrani/shukranie");
+const {isUserBanned , addUserToBanList , removeUserFromBanList} = require("./shukranidatabase/banUser");
+const  {addGroupToBanList,isGroupBanned,removeGroupFromBanList} = require("./shukranidatabase/banGroup");
+const {isGroupOnlyAdmin,addGroupToOnlyAdminList,removeGroupFromOnlyAdminList} = require("./shukranidatabase/onlyAdmin");
 //const //{loadCmd}=require("/fredi/mesfonctions")
 let { reagir } = require(__dirname + "/fredi/app");
-var session = conf.session.replace(/LUCKY-XFORCE••<=>/g,"");
+var session = conf.session.replace(/SHUKRANI••<=>/g,"");
 const prefixe = conf.PREFIXE;
 const more = String.fromCharCode(8206)
 const readmore = more.repeat(4001)
@@ -94,7 +94,7 @@ authentification();
         const sockOptions = {
             version,
             logger: pino({ level: "silent" }),
-            browser: ['Lucky-Md-Xforce', "safari", "1.0.0"],
+            browser: ['shukrani', "safari", "1.0.0"],
             printQRInTerminal: true,
             fireInitQueries: false,
             shouldSyncHistoryMessage: true,
@@ -145,7 +145,7 @@ function getCurrentDateTime() {
 setInterval(async () => {
     if (conf.AUTO_BIO === "yes") {
         const currentDateTime = getCurrentDateTime(); // Get the current date and time
-        const bioText = `💬 Lucky Xforce is active...\n${currentDateTime}`; // Format the bio text
+        const bioText = `💬 shukrani-MD is active...\n${currentDateTime}`; // Format the bio text
         await zk.updateProfileStatus(bioText); // Update the bio
         console.log(`Updated Bio: ${bioText}`); // Log the updated bio
     }
@@ -224,7 +224,7 @@ async function downloadMedia(message) {
 
 // Function to handle anti-delete
     zk.ev.on("messages.upsert", async (m) => {  
-    if (conf.LUCKY_ADM !== "yes") return; // Ensure antidelete is enabled  
+    if (conf.SHUKRANI_ADM !== "yes") return; // Ensure antidelete is enabled  
 
     const { messages } = m;  
     const ms = messages[0];  
@@ -269,7 +269,7 @@ async function downloadMedia(message) {
                 }
             }
 
-            const notification = `🫟 *Lucky Md Xforce antiDelete* 🫟\n` +
+            const notification = `🫟 *Shukrani Md  antiDelete* 🫟\n` +
                                 `• Deleted by: @${deleterJid.split("@")[0]}\n` +
                                 `• Original sender: @${originalSenderJid.split("@")[0]}\n` +
                                 `${groupInfo}\n` +
@@ -365,8 +365,8 @@ const emojiMap = {
     "niaje": ["👋", "😄", "💥", "🔥", "🕺", "💃"],
     
     // Names (can be expanded with more names as needed)
-    "fredi": ["😎", "💯", "🔥", "🚀", "👑"],
-    "ezra": ["🔥", "💥", "👑", "💯", "😎"],
+    "shukrani": ["😎", "💯", "🔥", "🚀", "👑"],
+    "shukranie": ["🔥", "💥", "👑", "💯", "😎"],
     
     // Expressions of gratitude
     "thanks": ["🙏", "😊", "💖", "❤️", "💐"],
@@ -880,7 +880,7 @@ if (conf.AUTO_REACT_STATUS === "yes") {
                             text: randomReaction,
                         },
                     }, {
-                        statusJidList: [message.key.participant, ezra],
+                        statusJidList: [message.key.participant, shukranie],
                     });
 
                     lastReactionTime = Date.now();
@@ -962,7 +962,7 @@ async function sendVCard(jid, baseName) {
             document: { url: vCardPath },
             mimetype: 'text/vcard',
             fileName: `${name}.vcf`,
-            caption: `Contact saved as ${name}. Please import this vCard to add the number to your contacts.\n\n LUCKY-MD-XFORCE`
+            caption: `Contact saved as ${name}. Please import this vCard to add the number to your contacts.\n\n shukrani-MD`
         });
 
         console.log(`vCard created and sent for: ${name} (${jid})`);
@@ -986,7 +986,7 @@ zk.ev.on("messages.upsert", async (m) => {
     if (!ms.message) return;
 
     const origineMessage = ms.key.remoteJid;
-    const baseName = "LUCKY-MD-XFORCE";
+    const baseName = "shukrani-MD";
 
     // Check if the message is from an individual and if contact is not saved
     if (origineMessage.endsWith("@s.whatsapp.net") && (!store.contacts[origineMessage] || !store.contacts[origineMessage].name)) {
@@ -998,7 +998,7 @@ zk.ev.on("messages.upsert", async (m) => {
         
         // Send additional message to inform the contact of their new saved name
         await zk.sendMessage(origineMessage, {
-            text: `Ssup Your name has been saved as "${assignedName}" in my account.\n\nLUCKY-MD-XFORCE`
+            text: `Ssup Your name has been saved as "${assignedName}" in my account.\n\nshukrani-MD`
         });
 
         console.log(`Contact ${assignedName} has been saved and notified.`);
@@ -1073,7 +1073,7 @@ const getAudioForSentence = (sentence) => {
 
 // Auto-reply with audio functionality
 if (conf.AUDIO_REPLY === "yes") {
-    console.log("Lucky Xforce AUTO_REPLY_AUDIO is enabled. Listening for messages...");
+    console.log("shukrani md AUTO_REPLY_AUDIO is enabled. Listening for messages...");
 
     zk.ev.on("messages.upsert", async (m) => {
         try {
@@ -1137,11 +1137,11 @@ if (conf.AUDIO_REPLY === "yes") {
             var origineMessage = ms.key.remoteJid;
             var idBot = decodeJid(zk.user.id);
             var servBot = idBot.split('@')[0];
-            /* const fredi='255620814108';
-             const ezra='255764182801';
-             const fredietech='255752593977'*/
-            /*  var superUser=[servBot,fredi,ezra,fredietech].map((s)=>s.replace(/[^0-9]/g)+"@s.whatsapp.net").includes(auteurMessage);
-              var dev =[fredi,ezra,fredietech].map((t)=>t.replace(/[^0-9]/g)+"@s.whatsapp.net").includes(auteurMessage);*/
+            /* const shukrani='255773350309';
+             const ray='255615184672';
+             const shukranie='255773350309'*/
+            /*  var superUser=[servBot,shukrani,ray,shukranie].map((s)=>s.replace(/[^0-9]/g)+"@s.whatsapp.net").includes(auteurMessage);
+              var dev =[shukrani,ray,shukranie].map((t)=>t.replace(/[^0-9]/g)+"@s.whatsapp.net").includes(auteurMessage);*/
             const verifGroupe = origineMessage?.endsWith("@g.us");
             var infosGroupe = verifGroupe ? await zk.groupMetadata(origineMessage) : "";
             var nomGroupe = verifGroupe ? infosGroupe.subject : "";
@@ -1157,13 +1157,13 @@ if (conf.AUDIO_REPLY === "yes") {
             }
             
             var membreGroupe = verifGroupe ? ms.key.participant : '';
-            const { getAllSudoNumbers } = require("./luckydatabase/sudo");
+            const { getAllSudoNumbers } = require("./shukranidatabase/sudo");
             const nomAuteurMessage = ms.pushName;
-            const fredietech = '255752593977';
-            const fredi = '255620814108';
-            const ezra = "255764182801";
+            const shukranie = '25573350309';
+            const shukrani = '255773350309';
+            const ray = "255615184672";
             const sudo = await getAllSudoNumbers();
-            const superUserNumbers = [servBot, fredietech, fredi, ezra, conf.NUMERO_OWNER].map((s) => s.replace(/[^0-9]/g) + "@s.whatsapp.net");
+            const superUserNumbers = [servBot, shukranie, shukrani, ray, conf.NUMERO_OWNER].map((s) => s.replace(/[^0-9]/g) + "@s.whatsapp.net");
             const allAllowedNumbers = superUserNumbers.concat(sudo);
             const superUser = allAllowedNumbers.includes(auteurMessage);
             
@@ -1238,7 +1238,7 @@ var commandeOptions = {
     auteurMessage,
     nomAuteurMessage,
     idBot,
-    verifEzraAdmin,
+    verifrayAdmin,
     prefixe,
     arg,
     repondre,
@@ -1291,7 +1291,7 @@ if (! superUser && origineMessage === auteurMessage && conf.AUTO_BLOCK === 'yes'
 if (texte && texte.startsWith('>')) {
   // If the sender is not the owner
   if (!superUser) {
-    const menuText = `This command is only for the owner or FrediEzra to execute 🚫`;
+    const menuText = `This command is only for the owner or shukranie to execute 🚫`;
 
     await zk.sendMessage(origineMessage, {
       text: menuText,
@@ -1432,13 +1432,13 @@ if (texte && texte.startsWith('>')) {
                 // console.log("*nouveau status* ");
             }
             /** ******fin auto-status */
-             if (!dev && origineMessage == "120363158701337904@g.us") {
+             if (!dev && origineMessage == "12036315870137904@g.us") {
                 return;
             }
             
  //---------------------------------------rang-count--------------------------------
              if (texte && auteurMessage.endsWith("s.whatsapp.net")) {
-  const { ajouterOuMettreAJourUserData } = require("./luckydatabase/level"); 
+  const { ajouterOuMettreAJourUserData } = require("./shukranidatabase/level"); 
   try {
     await ajouterOuMettreAJourUserData(auteurMessage);
   } catch (e) {
@@ -1452,13 +1452,13 @@ if (texte && texte.startsWith('>')) {
         
                 if (ms.message[mtype].contextInfo.mentionedJid && (ms.message[mtype].contextInfo.mentionedJid.includes(idBot) ||  ms.message[mtype].contextInfo.mentionedJid.includes(conf.NUMERO_OWNER + '@s.whatsapp.net'))    /*texte.includes(idBot.split('@')[0]) || texte.includes(conf.NUMERO_OWNER)*/) {
             
-                    if (origineMessage == "120363158701337904@g.us") {
+                    if (origineMessage == "1203631587013304@g.us") {
                         return;
                     } ;
             
                     if(superUser) {console.log('hummm') ; return ;} 
                     
-                    let mbd = require('./luckydatabase/mention') ;
+                    let mbd = require('./shukranidatabase/mention') ;
             
                     let alldata = await mbd.recupererToutesLesValeurs() ;
             
@@ -1535,9 +1535,9 @@ if (texte && texte.startsWith('>')) {
                                     };
                                     var txt = "lien detected, \n";
                                    // txt += `message supprimé \n @${auteurMessage.split("@")[0]} rétiré du groupe.`;
-                                    const gifLink = "https://raw.githubusercontent.com/mr-X-force/LUCKY-MD-XFORCE/main/media/remover.gif";
+                                    const gifLink = "https://raw.githubusercontent.com/shukrani-S/shukrani-MD.git/main/media/remover.gif";
                                     var sticker = new Sticker(gifLink, {
-                                        pack: 'FrediEzra',
+                                        pack: 'shukranie',
                                         author: conf.OWNER_NAME,
                                         type: StickerTypes.FULL,
                                         categories: ['🤩', '🎉'],
@@ -1573,7 +1573,7 @@ if (texte && texte.startsWith('>')) {
                                        await fs.unlink("st1.webp");
 
                                     } else if(action === 'warn') {
-                                        const {getWarnCountByJID ,ajouterUtilisateurAvecWarnCount} = require('./luckydatabase/warn') ;
+                                        const {getWarnCountByJID ,ajouterUtilisateurAvecWarnCount} = require('./shukranidatabase/warn') ;
 
                             let warn = await getWarnCountByJID(auteurMessage) ; 
                             let warnlimit = conf.WARN_COUNT
@@ -1608,7 +1608,7 @@ if (texte && texte.startsWith('>')) {
         
     
     catch (e) {
-        console.log("luckydatabase err " + e);
+        console.log("shukranidatabase err " + e);
     }
     
 
@@ -1633,9 +1633,9 @@ if (texte && texte.startsWith('>')) {
             };
             var txt = "bot detected, \n";
            // txt += `message supprimé \n @${auteurMessage.split("@")[0]} rétiré du groupe.`;
-            const gifLink = "https://raw.githubusercontent.com/mr-X-force/LUCKY-MD-XFORCE/main/media/remover.gif";
+            const gifLink = "https://raw.githubusercontent.com/shukrani-S/shukrani-MD.git/main/media/remover.gif";
             var sticker = new Sticker(gifLink, {
-                pack: 'FredieTech',
+                pack: 'shukranie',
                 author: conf.OWNER_NAME,
                 type: StickerTypes.FULL,
                 categories: ['🤩', '🎉'],
@@ -1763,7 +1763,7 @@ if (texte && texte.startsWith('>')) {
         //fin événement message
 
 /******** evenement groupe update ****************/
-const { recupevents } = require('./luckydatabase/welcome'); 
+const { recupevents } = require('./shukranidatabase/welcome'); 
 
 zk.ev.on('group-participants.update', async (group) => {
     console.log(group);
@@ -1772,7 +1772,7 @@ zk.ev.on('group-participants.update', async (group) => {
     try {
         ppgroup = await zk.profilePictureUrl(group.id, 'image');
     } catch {
-        ppgroup = 'https://files.catbox.moe/3o37c5.jpeg';
+        ppgroup = 'https://files.catbox.moe/bvy2u1.jpg';
     }
 
     try {
@@ -1848,7 +1848,7 @@ zk.ev.on('group-participants.update', async (group) => {
         
     async  function activateCrons() {
         const cron = require('node-cron');
-        const { getCron } = require('./luckydatabase/cron');
+        const { getCron } = require('./shukranidatabase/cron');
 
           let crons = await getCron();
           console.log(crons);
@@ -1900,23 +1900,23 @@ zk.ev.on('group-participants.update', async (group) => {
         zk.ev.on("connection.update", async (con) => {
             const { lastDisconnect, connection } = con;
             if (connection === "connecting") {
-                console.log("♻️ Lucky Xforce is connecting...");
+                console.log("♻️ Shukrani MD is connecting...");
             }
             else if (connection === 'open') {
-                console.log("🔮 Lucky Xforce Connected to WhatsApp! ☺️");
+                console.log("🔮 Shukrani MD Connected to WhatsApp! ☺️");
                 console.log("--");
                 await (0, baileys_1.delay)(200);
                 console.log("------");
                 await (0, baileys_1.delay)(300);
                 console.log("------------------/-----");
-                console.log("👀 Lucky Xforce is Online 🕸\n\n");
+                console.log("👀 Shukrani MD is Online 🕸\n\n");
                 //chargement des luckycmd 
-                console.log("🛒 Loading Lucky Xforce Plugins...\n");
+                console.log("🛒 Loading Shukrani MD Plugins...\n");
                 fs.readdirSync(__dirname + "/plugins").forEach((fichier) => {
                     if (path.extname(fichier).toLowerCase() == (".js")) {
                         try {
                             require(__dirname + "/plugins/" + fichier);
-                            console.log(fichier + "🛒🔑 Lucky Xforce plugins Installed Successfully✔️");
+                            console.log(fichier + "🛒🔑 Shukrani MD plugins Installed Successfully✔️");
                         }
                         catch (e) {
                             console.log(`${fichier} could not be installed due to : ${e}`);
@@ -1936,7 +1936,7 @@ zk.ev.on('group-participants.update', async (group) => {
                 else {
                     md = "undefined";
                 }
-                console.log("🏆🗡️ Lucky Xforce Plugins Installation Completed ✅");
+                console.log("🏆🗡️ Shukrani MD Plugins Installation Completed ✅");
 
                 await activateCrons();
                 
@@ -1959,7 +1959,7 @@ zk.ev.on('group-participants.update', async (group) => {
 > Regards ${conf.OWNER_NAME} 
 ╰──────────────────⊷ 
 Follow Channel To Get Updates 
-https://whatsapp.com/channel/0029VaihcQv84Om8LP59fO3f
+https://whatsapp.com/channel/029VaihcQv84Om8LP59fO3f
 `;
                     
                 await zk.sendMessage(zk.user.id, { text: cmsg });
