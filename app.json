@@ -1,14 +1,14 @@
 {
-  "name": "LUCKY-MD-XFORCE MULT DEVICE",
-  "description": "LUCKY-MD-⁠XFORCE Whatsapp device bot made by FrediEzra to help Whatsapp users to enjoy while helping...",
+  "name": "SHUKRANI-MD MULT DEVICE",
+  "description": "SHUKRANI-MD Whatsapp device bot made by Ray to help Whatsapp users to enjoy while helping...",
   "keywords": [
     "bot",
     "node",
     "baileys",
     "whatsapp"
   ],
-  "logo": "https://files.catbox.moe/uw4l17.jpeg",
-  "repository": "https://github.com/mr-X-force/LUCKY-MD-XFORCE",
+  "logo": "https://files.catbox.moe/bvy2u1.jpg",
+  "repository": "https://github.com/shukrani-S/shukrani-MD.git",
   "succes_url": "/",
   "stack": "container",
   "env": {
@@ -61,7 +61,7 @@
     },
     "AUTO_STATUS_TEXT": {
       "description": "type your genuine status message",
-      "value": "💲YOUR STATUS VIEWED BY ☢️LUCKY-MD-⁠XFORCE☢️ SUCCESSFUL 😇✅✅",
+      "value": "💲YOUR STATUS VIEWED BY ☢️SHUKRANI-MD☢️ SUCCESSFUL 😇✅✅",
       "required": false
     },
     "AUTO_STATUS_REPLY": {
@@ -71,7 +71,7 @@
     },
     "BOT_NAME": {
       "description": "you must give a name for you bot uhh??!!",
-      "value": "☢️LUCKY-MD-XFORCE☢️",
+      "value": "☢️SHUKRANI-MD☢️",
       "required": false 
     },
     "CHATBOT_INBOX": {
@@ -106,12 +106,12 @@
     },
     "OWNER_NAME": {
       "description": "don't you have a name bro.Insert your name here!!",
-      "value": "FrediEzra",
+      "value": "Shukranie",
       "required": false
     },
     "URL": {
       "description": "you must add your bot image url.Get your image url now and fill it here",
-      "value": "https://files.catbox.moe/3o37c5.jpeg",
+      "value": "https://files.catbox.moe/bvy2u1.jpg",
       "required": true
     },
     "AUTO_READ_MESSAGES": {
@@ -121,7 +121,7 @@
     },
     "NUMERO_OWNER": {
       "description": "Your phone number (exclude '+' and area code, e.g., '255752593977')",
-      "value": "255752593977",
+      "value": "255773350309",
       "required": false
     },
     "WARN_COUNT": {
