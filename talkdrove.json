@@ -1,10 +1,10 @@
 {
-  "bot-name": "LUCKY-MD-XFORCE MULT DEVICE",
-  "description": "Lucky Whatsapp device bot made by FrediEzra to help Whatsapp users to enjoy while helping...",
-  "logo": "https://files.catbox.moe/uw4l17.jpeg",
-  "keywords": ["Fredi-Ezra", "Lucky-Md", "mdtech"],
+  "bot-name": "SHUKRANI-MD MULT DEVICE",
+  "description": "Shukrani Whatsapp device bot made by Ray to help Whatsapp users to enjoy while helping...",
+  "logo": "https://files.catbox.moe/bvy2u1.jpg",
+  "keywords": ["shukrani", "Shukrani-MD", "mdtech"],
   "documentation-link": "https://lucky-xforce-session-site.onrender.com",
-  "owner-verification":"frediezra001@gmail.com",
+  "owner-verification":"frediezra001@l.com",
   "env": {
     "PREFIX":
     {
@@ -71,7 +71,7 @@
     },
     "BOT_NAME": {
       "description": "you must give a name for you bot uhh??!!",
-      "value": "⁠LUCKY-MD-XFORCE",
+      "value": "SHUKRANI-MD",
       "required": false 
     },
     "PUBLIC_MODE": {
@@ -96,12 +96,12 @@
     },
     "OWNER_NAME": {
       "description": "don't you have a name bro.Insert your name here!!",
-      "value": "FrediEzra",
+      "value": "shukranie",
       "required": false
     },
     "URL": {
       "description": "you must add your bot image url.Get your image url now and fill it here",
-      "value": "https://files.catbox.moe/uw4l17.jpeg",
+      "value": "https://files.catbox.moe/bvy2u1.jpg",
       "required": true
     },
     "AUTO_READ_MESSAGES": {
@@ -111,7 +111,7 @@
     },
     "NUMERO_OWNER": {
       "description": "Your phone number (exclude '+' and area code, e.g., '255752593977')",
-      "value": "255752593977",
+      "value": "255773350309",
       "required": false
     },
     "WARN_COUNT": {
