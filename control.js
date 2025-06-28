@@ -50,14 +50,14 @@ let path = require("path");
 const FileType = require('file-type');
 const { Sticker, createSticker, StickerTypes } = require('wa-sticker-formatter');
 //import chalk from 'chalk'
-const { verifierEtatJid , recupererActionJid } = require("./luckydatabase/antilien");
+const { verifierEtatJid , recupererActionJid } = require("./shukranitabase/antilien");
 const { atbverifierEtatJid , atbrecupererActionJid } = require("./shukranidatabase/antibot");
 let evt = require(__dirname + "/shukrani/shukranie");
 const {isUserBanned , addUserToBanList , removeUserFromBanList} = require("./shukranidatabase/banUser");
 const  {addGroupToBanList,isGroupBanned,removeGroupFromBanList} = require("./shukranidatabase/banGroup");
 const {isGroupOnlyAdmin,addGroupToOnlyAdminList,removeGroupFromOnlyAdminList} = require("./shukranidatabase/onlyAdmin");
 //const //{loadCmd}=require("/fredi/mesfonctions")
-let { reagir } = require(__dirname + "/fredi/app");
+let { reagir } = require(__dirname + "/shukrani/app");
 var session = conf.session.replace(/SHUKRANI••<=>/g,"");
 const prefixe = conf.PREFIXE;
 const more = String.fromCharCode(8206)
