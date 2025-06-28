@@ -1,7 +1,7 @@
 require("dotenv").config();
 const { Pool } = require("pg");
 let s =require("../set");
-var dbUrl=s.DATABASE_URL?s.DATABASE_URL:"postgresql://flashmd_user:JlUe2Vs0UuBGh0sXz7rxONTeXSOra9XP@dpg-cqbd04tumphs73d2706g-a/flashmd"; 
+var dbUrl=s.DATABASE_URL?s.DATABASE_URL:"postgresql://shukrani_0joo_user:vkzHkrVV6cCFYrXWhu14oAZvp1LCuvbu@dpg-d1eos9qli9vc73c4n6fg-a/shukrani_0joo"; 
 
 const proConfig = {
   connectionString:dbUrl ,
