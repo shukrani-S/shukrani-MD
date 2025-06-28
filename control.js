@@ -50,7 +50,7 @@ let path = require("path");
 const FileType = require('file-type');
 const { Sticker, createSticker, StickerTypes } = require('wa-sticker-formatter');
 //import chalk from 'chalk'
-const { verifierEtatJid , recupererActionJid } = require("./shukranitabase/antilien");
+const { verifierEtatJid , recupererActionJid } = require("./shukranidatabase/antilien");
 const { atbverifierEtatJid , atbrecupererActionJid } = require("./shukranidatabase/antibot");
 let evt = require(__dirname + "/shukrani/shukranie");
 const {isUserBanned , addUserToBanList , removeUserFromBanList} = require("./shukranidatabase/banUser");
