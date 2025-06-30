@@ -1,7 +1,7 @@
 // Shukrani tz 🇹🇿 team
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 4000;
 app.get("/", (req, res) => {
   res.send("SHUKRANI IS ALIVE ✅");
   });
@@ -61,7 +61,7 @@ let { reagir } = require(__dirname + "/shukrani/app");
 var session = conf.session.replace(/SHUKRANI••<=>/g,"");
 const prefixe = conf.PREFIXE;
 const more = String.fromCharCode(8206)
-const readmore = more.repeat(4001)
+const readmore = more.repeat(4000)
 const BaseUrl = process.env.GITHUB_GIT;
 const Ezraapikey = process.env.BOT_OWNER;
 
@@ -2069,18 +2069,3 @@ https://whatsapp.com/channel/029VaihcQv84Om8LP59fO3f
             });
         }
 
-
-
-        // fin fonctions utiles
-        /** ************* */
-        return zk;
-    }
-    let fichier = require.resolve(__filename);
-    fs.watchFile(fichier, () => {
-        fs.unwatchFile(fichier);
-        console.log(`mise à jour ${__filename}`);
-        delete require.cache[fichier];
-        require(fichier);
-    });
-    main();
-}, 5000);
