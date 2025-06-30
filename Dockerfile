@@ -8,9 +8,6 @@ RUN apt-get update && \
   apt-get upgrade -y && \
   npm i pm2 -g && \
   rm -rf /var/lib/apt/lists/*
-  
-RUN  git clone https://github.com/shukrani-S/shukrani-MD.git  /root/shukrani_bot
-WORKDIR /root/shukrani_bot/
 
 
 
